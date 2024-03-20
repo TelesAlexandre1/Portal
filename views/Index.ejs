@@ -1,0 +1,66 @@
+<%- include('../partials/header.ejs') %>
+   
+    <link rel="stylesheet" href="./css/style.css" />
+    <body style="background-color: #15181b">
+        <section>
+            <nav>               
+                <div>
+                    <div data-ux="Block" class="navbar-brand">
+                        <img src=""/>
+                    </div>
+                    <div style="display: flex; justify-content:space-around">
+                        <div style="color: white;">
+                            <video src="./video/index.mp4" height="85%" width="85%" />
+                        </div>
+                        <div style="display:table-row; flex-direction: row; justify-content:space-between">
+                            <br>
+                            <div style="display: flex;text-justify: auto;   ">
+                                <div class="label2" style="text-align: justify; color: white; font-size:x-large;">Bem-vindo ao portal Victor Team</div>
+                            </div>
+                            <div>
+                                <div>
+                                    Novo por aqui? <a href="./Cadastro" class="" style="color: rgb(139, 97, 255);">Cadastre-se</a>
+                                    <p></p>
+                                    <div class="divider align-items-center my-lg-5"></div>
+                                </div>
+                                <form action="auth" method="POST">
+                                <div class="form-outline mb-4 ">
+                                    <label class="form-label label1" for="EMAIL">Email</label>
+                                    <input type="EMAIL" id="EMAIL" value="<%= EMAIL %>" name="EMAIL" class="form-control form-control-lg" placeholder="Entre com mail valido" style="background-color:  rgb(33, 31, 31); -webkit-text-fill-color: rgb(241, 231, 231);  border-color:rgb(163, 91, 240);" />
+                                    <div style="font-size: x-small; color: red; width:auto">
+                                    
+                                    <% if (EMAILError) { %> <%= EMAILError %> <% } %>
+                                    <% if (EMAILIncorrect) { %> <%= EMAILIncorrect %> <% } %>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-3">
+                                    <label class="form-label label1" for="PASSWORD">Senha</label>
+                                    <input type="PASSWORD" id="PASSWORD" name="PASSWORD" class="form-control form-control-lg" placeholder="informe a senha" style="background-color:  rgb(33, 31, 31); -webkit-text-fill-color: rgb(241, 231, 231); border-color:rgb(163, 91, 240);" />
+                                    <div style="font-size: x-small; color: red; width:auto">
+                                    
+                                        <% if (PASSWORDIncorrect) { %> <%= PASSWORDIncorrect %> <% } %>
+                                        <% if (PASSWORDError) { %> <%= PASSWORDError %> <% } %>
+                                        <br>
+                                        <% if (EMAILIncorrect1) { %><%= EMAILIncorrect1 %><% } %>
+
+                                    </div>
+                                   
+                                </div>
+
+                                <a href="./Home">
+                                    <button type="submit" class="button332" style="height: 60px; width: 500px; ">
+                                     Entrar
+                                    </button>
+                                </a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <%- include('../partials/footer.ejs') %>
+        </section>
+       
+    </body>
+
+    
